@@ -2,9 +2,12 @@ import express from "express";
 
 const app = express();
 
-// TESTING SERVER
-app.get("/test", (req, res) => {
-  res.send("Server Health OK !!");
-});
+// MIDDLEWARES
+
+// ROUTES IMPORTS
+import userRoutes from "./routes/users.routes.js";
+
+// ROUTES DECLARATION
+app.use("/users", userRoutes);
 
 export { app };
