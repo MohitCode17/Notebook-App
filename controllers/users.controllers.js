@@ -30,7 +30,25 @@ export const handleUserSignup = async (req, res) => {
 };
 
 // 👉 SIGNIN CONTROLLER
-export const handleUserSignin = async (req, res) => {};
+export const handleUserSignin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password)
+      return res.json({ msg: "All fields are required !!" });
+
+    const user = await User.findOne({ email });
+
+    if (!user || !(await user.comparePassword(password)))
+      return res.json({ msg: "Invalid email or password !!" });
+
+    // SENT AUTH TOKEN TO USER IN COOKIE
+    authToken(user._id, res);
+    res.redirect("/");
+  } catch (error) {
+    res.status(500).json({ msg: "Error signin user account !!", error });
+  }
+};
 
 // 👉 LOGOUT CONTROLLER
 export const handleUserLogout = async (req, res) => {};
