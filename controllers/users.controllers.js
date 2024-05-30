@@ -23,7 +23,6 @@ export const handleUserSignup = async (req, res) => {
     // SENT AUTH TOKEN TO USER IN COOKIE
     authToken(user._id, res);
     res.redirect("/");
-    // res.json({ msg: "User created" });
   } catch (error) {
     res.status(500).json({ msg: "Error creating user account !!", error });
   }
@@ -51,4 +50,11 @@ export const handleUserSignin = async (req, res) => {
 };
 
 // 👉 LOGOUT CONTROLLER
-export const handleUserLogout = async (req, res) => {};
+export const handleUserLogout = async (req, res) => {
+  try {
+    res.clearCookie("token");
+    res.redirect("/sign-in");
+  } catch (error) {
+    res.status(500).json({ msg: "Error logout user account !!", error });
+  }
+};
