@@ -1,0 +1,28 @@
+{
+  "name": "notebook-app",
+  "version": "1.0.0",
+  "description": "This notebook app is a simple and efficient tool for managing your notes. It provides essential CRUD (Create, Read, Update, Delete) operations to help you organize your thoughts, tasks, and ideas effortlessly. With an intuitive interface and seamless functionality, you can easily create new notes, update and edit existing ones, and delete notes you no longer need.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "notebook",
+    "express",
+    "node",
+    "rest-api",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Mohit Gupta <https://github.com/MohitCode17>",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
