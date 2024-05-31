@@ -39,7 +39,7 @@ export const handleUserSignin = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user || !(await user.comparePassword(password)))
-      return res.json({ msg: "Invalid email or password !!" });
+      return res.render("signin", { error: "Invalid email or password !!" });
 
     // SENT AUTH TOKEN TO USER IN COOKIE
     authToken(user._id, res);
