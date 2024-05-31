@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="lemonade">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- DAISY UI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- TAILWIND CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Notebook - Secure Notes for Everyday Use</title>
+  </head>
+  <body>
+    <!-- START NAVBAR -->
+    <div class="h-[90px] navbar bg-base-100 border-b border-b-black">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-black text-[#f8fdef] rounded-lg w-52"
+          >
+            <li class="font-semibold"><a href="/">Home</a></li>
+            <li class="font-semibold"><a href="/about">About</a></li>
+            <li class="font-semibold"><a href="/faq">FAQ</a></li>
+          </ul>
+        </div>
+        <a href="/" class="btn btn-ghost text-xl">
+          <svg
+            id="logo-86"
+            width="29"
+            height="29"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="ccustom"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M25.5557 11.6853C23.9112 10.5865 21.9778 10 20 10V0C23.9556 0 27.8224 1.17298 31.1114 3.37061C34.4004 5.56823 36.9638 8.69181 38.4776 12.3463C39.9913 16.0008 40.3874 20.0222 39.6157 23.9018C38.844 27.7814 36.9392 31.3451 34.1421 34.1421C31.3451 36.9392 27.7814 38.844 23.9018 39.6157C20.0222 40.3874 16.0008 39.9913 12.3463 38.4776C8.69181 36.9638 5.56823 34.4004 3.37061 31.1114C1.17298 27.8224 0 23.9556 0 20H10C10 21.9778 10.5865 23.9112 11.6853 25.5557C12.7841 27.2002 14.3459 28.4819 16.1732 29.2388C18.0004 29.9957 20.0111 30.1937 21.9509 29.8078C23.8907 29.422 25.6725 28.4696 27.0711 27.0711C28.4696 25.6725 29.422 23.8907 29.8078 21.9509C30.1937 20.0111 29.9957 18.0004 29.2388 16.1732C28.4819 14.3459 27.2002 12.7841 25.5557 11.6853Z"
+              fill="#000000"
+            ></path>
+            <path
+              class="ccustom"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10 5.16562e-07C10 1.31322 9.74135 2.61358 9.2388 3.82683C8.73625 5.04009 7.99966 6.14248 7.07107 7.07107C6.14249 7.99966 5.0401 8.73625 3.82684 9.2388C2.61358 9.74134 1.31322 10 5.4439e-06 10L5.00679e-06 20C2.62644 20 5.22716 19.4827 7.65368 18.4776C10.0802 17.4725 12.285 15.9993 14.1421 14.1421C15.9993 12.285 17.4725 10.0802 18.4776 7.65367C19.4827 5.22715 20 2.62643 20 -3.81469e-06L10 5.16562e-07Z"
+              fill="#FFD700"
+            ></path>
+          </svg>
+          Notebook</a
+        >
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li class="font-semibold"><a href="/">Home</a></li>
+          <li class="font-semibold"><a href="/about">About</a></li>
+          <li class="font-semibold"><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a href="/sign-in" class="btn">Sign In</a>
+      </div>
+    </div>
+    <!-- END NAVBAR -->
+
+    <!-- HERO SECTION -->
+    <div style="height: calc(100vh - 100px)" class="px-6 pt-8 sm:pt-10 lg:px-8">
+      <div class="mx-auto max-w-2xl py-24">
+        <div class="text-center">
+          <h1
+            class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+          >
+            Your Digital Notebook for Every Thought.
+          </h1>
+          <p class="mt-6 text-lg leading-8 text-gray-600">
+            Capture every idea and stay organized with a powerful note app
+            designed for your busy life.
+          </p>
+          <div class="mt-10 flex items-center justify-center gap-x-2">
+            <a
+              href="/notes"
+              class="rounded-3xl bg-black px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-all duration-300"
+            >
+              Try Notebook, it's FREE!
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END HERO SECTION -->
+
+    <footer class="footer footer-center px-4 py-6 bg-base-300 text-base-content">
+      <aside>
+        <p>Copyright © 2024 - All right reserved by <a href="https://github.com/MohitCode17" target="_blank" class="font-semibold">@MohitCodes</a></p>
+      </aside>
+    </footer>
+  </body>
+</html>
