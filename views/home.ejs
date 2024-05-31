@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon/favicon-16x16.png"
+    />
 
     <link
       rel="stylesheet"
@@ -90,7 +100,42 @@
         </ul>
       </div>
       <div class="navbar-end">
+        <% if (authenticated) { %>
+        <div class="flex-none">
+          <div class="dropdown dropdown-end">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost btn-circle avatar"
+            >
+              <div class="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://pngfre.com/wp-content/uploads/anime-poster.png"
+                />
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a href="/users/profile" class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li>
+                <form action="/users/logout" method="post">
+                  <button type="submit" class="text-black">Logout</button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <% } else { %>
         <a href="/sign-in" class="btn">Sign In</a>
+        <% } %>
       </div>
     </div>
     <!-- END NAVBAR -->
