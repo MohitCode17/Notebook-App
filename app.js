@@ -15,10 +15,12 @@ app.use(cookieParser());
 
 // ROUTES IMPORTS
 import userRoutes from "./routes/users.routes.js";
+import notesRoutes from "./routes/notes.routes.js";
 import staticRoutes from "./routes/static.routes.js";
 
 // ROUTES DECLARATION
 app.use("/", staticRoutes);
 app.use("/users", userRoutes);
+app.use("/notes", notesRoutes);
 
 export { app };
