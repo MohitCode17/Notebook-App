@@ -5,7 +5,7 @@ import {
   handleGetAllNotes,
   handleGetNoteById,
   handleUpdateNote,
-} from "../controllers/notes.controllers";
+} from "../controllers/notes.controllers.js";
 
 const router = express.Router();
 

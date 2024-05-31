@@ -15,8 +15,6 @@ export const setAuthStatus = (req, res, next) => {
     }
 
     req.isAuthenticated = true;
-    req.user = user;
-    console.log(req.user);
     next();
   });
 };
