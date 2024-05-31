@@ -20,4 +20,10 @@ router.get("/sign-up", (req, res) => {
   res.render("signup");
 });
 
+// ---------------------------------------------------------------------------------------------------
+// RENDER NOTES PAGE TO "/notes" path
+router.get("/notes", setAuthStatus, async (req, res) => {
+  res.render("notes", { authenticated: req.isAuthenticated });
+});
+
 export default router;
