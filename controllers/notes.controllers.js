@@ -65,4 +65,11 @@ export const handleRenderEditNote = async (req, res) => {
 };
 
 // 👉 UPDATE NOTE CTRL
-export const handleUpdateNote = async (req, res) => {};
+export const handleUpdateNote = async (req, res) => {
+  try {
+    await Note.findByIdAndUpdate(req.params.noteId, req.body, { new: true });
+    res.redirect("/notes");
+  } catch (error) {
+    res.status(500).json({ msg: "Error updating a note !!", error });
+  }
+};

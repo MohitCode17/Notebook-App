@@ -48,7 +48,7 @@
       <div class="form mt-8">
         <form
           class="w-full flex flex-col gap-5"
-          action="/notes/create"
+          action="/notes/edit/<%= note?._id %>"
           method="post"
         >
           <div class="w-full">
@@ -84,7 +84,9 @@
               rows="4"
               name="description"
               required
-            ><%= note?.description %></textarea>
+            >
+<%= note?.description %></textarea
+            >
             <p class="mt-1 text-xs text-gray-500">*This field is required</p>
           </div>
 

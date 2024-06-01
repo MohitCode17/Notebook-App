@@ -25,9 +25,9 @@ router.get("/:noteId", authenticated, handleGetNoteById);
 router.get("/delete/:noteId", authenticated, handleDeleteNote);
 
 // 👉 UPDATE A NOTE        /notes/edit/:noteId
-router.get("/edit/:noteId", handleRenderEditNote);
+router.get("/edit/:noteId", authenticated, handleRenderEditNote);
 
 // 👉 UPDATE A NOTE        /notes/edit/:noteId
-router.post("/edit/:noteId", handleUpdateNote);
+router.post("/edit/:noteId", authenticated, handleUpdateNote);
 
 export default router;
