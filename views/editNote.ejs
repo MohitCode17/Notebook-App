@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="lemonade">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FAVICON -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- DAISY UI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- TAILWIND CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Notebook - Secure Notes for Everyday Use</title>
+  </head>
+  <body>
+    <div class="w-full min-h-screen text-black p-4 sm:p-10">
+      <div class="text-sm breadcrumbs">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/notes">All notes</a></li>
+          <li>Edit note</li>
+        </ul>
+      </div>
+
+      <div class="form mt-8">
+        <form
+          class="w-full flex flex-col gap-5"
+          action="/notes/create"
+          method="post"
+        >
+          <div class="w-full">
+            <label
+              class="text-md font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="title"
+            >
+              Note Title
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+              type="text"
+              placeholder="Note title here..."
+              id="title"
+              name="title"
+              value="<%= note?.title %>"
+              required
+            />
+            <p class="mt-1 text-xs text-gray-500">*This field is required</p>
+          </div>
+
+          <div class="w-full">
+            <label
+              class="text-md font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="description"
+            >
+              Note Description
+            </label>
+            <textarea
+              class="resize-none flex w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+              placeholder="Note description here..."
+              id="description"
+              rows="4"
+              name="description"
+              required
+            ><%= note?.description %></textarea>
+            <p class="mt-1 text-xs text-gray-500">*This field is required</p>
+          </div>
+
+          <button
+            type="submit"
+            class="rounded-md bg-black px-3 py-3 text-md font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition duration-300"
+          >
+            Update Note
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

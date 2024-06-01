@@ -5,6 +5,7 @@ import {
   handleGetAllNotes,
   handleGetNoteById,
   handleUpdateNote,
+  handleRenderEditNote,
 } from "../controllers/notes.controllers.js";
 import { authenticated } from "../middlewares/authenticated.js";
 import { setAuthStatus } from "../middlewares/setAuthStatus.js";
@@ -22,6 +23,9 @@ router.get("/:noteId", authenticated, handleGetNoteById);
 
 // 👉 DELETE A NOTE        /notes/delete/:noteId
 router.get("/delete/:noteId", authenticated, handleDeleteNote);
+
+// 👉 UPDATE A NOTE        /notes/edit/:noteId
+router.get("/edit/:noteId", handleRenderEditNote);
 
 // 👉 UPDATE A NOTE        /notes/edit/:noteId
 router.post("/edit/:noteId", handleUpdateNote);

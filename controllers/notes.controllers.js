@@ -56,5 +56,13 @@ export const handleDeleteNote = async (req, res) => {
   }
 };
 
+// RENDER UPDATE PAGE
+export const handleRenderEditNote = async (req, res) => {
+  const note = await Note.findById(req.params.noteId);
+  if (!note) res.status(404).json({ msg: "No note found !!" });
+
+  res.render("editNote", { note });
+};
+
 // 👉 UPDATE NOTE CTRL
 export const handleUpdateNote = async (req, res) => {};
