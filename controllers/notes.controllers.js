@@ -44,7 +44,17 @@ export const handleCreateNote = async (req, res) => {
 };
 
 // 👉 DELETE NOTE CTRL
-export const handleDeleteNote = async (req, res) => {};
+export const handleDeleteNote = async (req, res) => {
+  try {
+    const note = await Note.findById(req.params.noteId);
+    if (!note) res.status(404).json({ msg: "No note found !!" });
+
+    await Note.findByIdAndDelete(req.params.noteId);
+    res.redirect("/notes");
+  } catch (error) {
+    res.status(500).json({ msg: "Error delete a notes !!", error });
+  }
+};
 
 // 👉 UPDATE NOTE CTRL
 export const handleUpdateNote = async (req, res) => {};

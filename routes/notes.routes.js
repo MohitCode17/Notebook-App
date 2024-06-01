@@ -21,7 +21,7 @@ router.post("/create", authenticated, handleCreateNote);
 router.get("/:noteId", authenticated, handleGetNoteById);
 
 // 👉 DELETE A NOTE        /notes/delete/:noteId
-router.get("/delete/:noteId", handleDeleteNote);
+router.get("/delete/:noteId", authenticated, handleDeleteNote);
 
 // 👉 UPDATE A NOTE        /notes/edit/:noteId
 router.post("/edit/:noteId", handleUpdateNote);
