@@ -18,7 +18,7 @@ router.get("/", authenticated, setAuthStatus, handleGetAllNotes);
 router.post("/create", authenticated, handleCreateNote);
 
 // 👉 GET NOTE BY ID       /notes/:noteId
-router.get("/:noteId", handleGetNoteById);
+router.get("/:noteId", authenticated, handleGetNoteById);
 
 // 👉 DELETE A NOTE        /notes/delete/:noteId
 router.get("/delete/:noteId", handleDeleteNote);

@@ -11,7 +11,17 @@ export const handleGetAllNotes = async (req, res) => {
 };
 
 // 👉 GET SINGLE NOTE BY ID CTRL
-export const handleGetNoteById = async (req, res) => {};
+export const handleGetNoteById = async (req, res) => {
+  try {
+    const note = await Note.findById(req.params.noteId);
+
+    if (!note) return res.status(404).json({ msg: "No note found !!" });
+
+    res.render("singleNote", { note });
+  } catch (error) {
+    res.status(500).json({ msg: "Error fetching notes !!", error });
+  }
+};
 
 // 👉 CREATE A NEW NOTE CTRL
 export const handleCreateNote = async (req, res) => {
