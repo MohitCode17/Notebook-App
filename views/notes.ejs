@@ -141,8 +141,8 @@
     <!-- END NAVBAR -->
 
     <!-- CREATE NOTE SECTION -->
-    <div class="w-full min-h-screen text-black p-4 sm:p-10">
-      <div class="form mt-8">
+    <div style="min-height: calc(100vh - 100px);" class="w-full text-black p-4 sm:p-10">
+      <div class="form mt-4">
         <form
           class="w-full flex flex-col gap-5"
           action="/notes/create"
@@ -191,6 +191,52 @@
             Add Note
           </button>
         </form>
+      </div>
+
+      <!-- RENDER ALL NOTES -->
+
+      <div
+        class="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+      >
+        <% if (notes.length > 0) { %> <% notes.forEach(note => { %>  
+        <div
+          class="border shadow-md px-4 py-2 rounded-md flex flex-col justify-between"
+        >
+          <a
+            href="/notes/<%= note._id %>"
+            class="text-lg hover:text-black/80 transition-all duration-300"
+            ><%= note.title %></a
+          >
+          <div class="flex justify-between items-center mt-10">
+            <p class="text-[12px] text-gray-400/80">
+              <%= new Date(note.createdAt).toLocaleDateString('en-GB', { day:
+              'numeric', month: 'long', year: 'numeric' }) %>
+            </p>
+            <div class="flex items-center space-x-2">
+              <a
+                href="/notes/<%= note._id %>"
+                class="text-[12px] bg-[#dde0d7]/70 w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#dde0d7]/85 transition-all duration-300"
+              >
+                <i class="fa-regular fa-eye"></i>
+              </a>
+              <a
+                href="/notes/edit/<%= note._id %>"
+                class="text-[12px] bg-[#dde0d7]/70 w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#dde0d7]/85 transition-all duration-300"
+              >
+                <i class="fa-regular fa-pen-to-square"></i>
+              </a>
+              <a
+                href="/notes/delete/<%= note._id %>"
+                class="text-[12px] bg-[#dde0d7]/70 w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#dde0d7]/85 transition-all duration-300"
+              >
+                <i class="fa-solid fa-trash"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <% }) %> <% } else { %>
+        <h3 class="text-black/30 text-sm">No Notes Available!</h3>
+        <% } %>
       </div>
     </div>
     <!-- END CREATE NOTE SECTION -->
