@@ -6,6 +6,7 @@ import {
   handleGetNoteById,
   handleUpdateNote,
 } from "../controllers/notes.controllers.js";
+import { authenticated } from "../middlewares/authenticated.js";
 
 const router = express.Router();
 
@@ -13,7 +14,7 @@ const router = express.Router();
 router.get("/", handleGetAllNotes);
 
 // 👉 CREATE NEW NOTES     /notes/create
-router.post("/create", handleCreateNote);
+router.post("/create", authenticated, handleCreateNote);
 
 // 👉 GET NOTE BY ID       /notes/:noteId
 router.get("/:noteId", handleGetNoteById);

@@ -1,7 +1,7 @@
 // THIS STATIC.ROUTES.JS FILE CONTAINS THE CODE THAT RENDER VIEWS TO THE BROWSER
 import express from "express";
 import { setAuthStatus } from "../middlewares/setAuthStatus.js";
-import User from "../models/users.model.js";
+import { authenticated } from "../middlewares/authenticated.js";
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ router.get("/sign-up", (req, res) => {
 
 // ---------------------------------------------------------------------------------------------------
 // RENDER NOTES PAGE TO "/notes" path
-router.get("/notes", setAuthStatus, async (req, res) => {
+router.get("/notes", authenticated, setAuthStatus, async (req, res) => {
   res.render("notes", { authenticated: req.isAuthenticated });
 });
 
